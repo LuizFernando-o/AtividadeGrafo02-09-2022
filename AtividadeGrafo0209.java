@@ -1,22 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
- */
 package br.unicap.grafo.atividadegrafo0209;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.LinkedList;
-import java.util.Scanner;
 
 public class AtividadeGrafo0209 {
     
+    //criando lista de adjacência
     static LinkedList<String> adj1 = new LinkedList<String>();
-    static int cont = 0;
-    static int ordem = 0, tamanho = 0;
+    static int cont = 0; //contador para cálculo interno
+    static int ordem = 0, tamanho = 0; //atributos para armazenar ordem e tamanho
     
     public static void leitor(String path) throws IOException {
         
@@ -31,6 +25,7 @@ public class AtividadeGrafo0209 {
         linha = buffRead.readLine();
         tamanho = Integer.parseInt(linha);
         
+        //capturando e separando txt
         linha = buffRead.readLine();
         while (true) {
             if (linha != null) {
@@ -46,19 +41,16 @@ public class AtividadeGrafo0209 {
     }
     
     public static void main(String[] args) throws IOException {
+        //lendo arquivo txt no diretório local
         leitor("C:/Users/Aluno/Documents/NetBeansProjects/AtividadeGrafo0209/src/main/java/br/unicap/grafo/atividadegrafo0209/grafo.txt");
         System.out.println("Lendo o arquivo...\n");
         System.out.println("ORDEM: " + ordem);
         System.out.println("TAMANHO: " + tamanho);
-        System.out.println("===================");
+        System.out.println("=== GRAFO ===");
         
-//        System.out.println(adj1.toString());
-//         LinkedList<String> adj2 = new LinkedList<String>();
-        
+        //imprimindo grafo
         for (int i = 0; i < adj1.size(); i++) {
             System.out.println(adj1.get(i));
-        }
-        
-    }
-    
+        }    
+    }  
 }
